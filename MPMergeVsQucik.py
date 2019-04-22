@@ -57,14 +57,14 @@ def is_sorted(arr):
     return all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1))
 
 def main():
-    t1 = multiprocessing.Process(target=run_merge_sort, args=())
-    t2 = multiprocessing.Process(target=run_quick_sort, args=())
+    p1 = multiprocessing.Process(target=run_merge_sort, args=())
+    p2 = multiprocessing.Process(target=run_quick_sort, args=())
 
-    t1.start()
-    t2.start()
+    p1.start()
+    p2.start()
 
-    t1.join()
-    t2.join()
+    p1.join()
+    p2.join()
 
 if __name__ == '__main__':
     main()
